@@ -1,3 +1,5 @@
 [submodule "pispaas"]
 	path = public
 	url = git@github.com:JJ/pispaas.git
+[submodule "public"]
+	branch = gh-pages

@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+		<meta charset="utf-8">
+		
+		<title>Aplicaciones en un pis-PaaS</title>
+
+		<meta name="description" content="Una presentación sobre PaaS">
+		<meta name="author" content="JJ Merelo">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/extra.css">
+		<link rel="stylesheet" href="css/theme/blood.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+  </head>
+
+  <body>
+    
+    <div class="reveal">
+      
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+
+	<section><h1>Plataforma como servicio → <em>PaaS</em></h1></section>
+
+	<section><em>Plataforma</em> := <em>Stack</em> +
+	Añadidos.</section>
+
+	<section><h1>Generalmente online</h1>
+	  <h2 class='fragment'>Pero también privados/software libre:
+	    Cloud Foundry, OpenShift Origin</h2>
+
+	  <aside class='notes'>Usan por debajo técnicas de
+	  virtualización y aislamiento de recursos y orquestación de
+	  las mismas: OpenShift usa Docker + Kubernetes, 
+	</section>
+
+	<section>
+	  <section><h1>Un stack es</h1>
+	    <h2 class='fragment'><em>Delivery</em></h2>
+	    <h2 class='fragment'>Marco de aplicaciones MVC u otro</h2>
+	    <h2 class='fragment'>Almacén de datos</h2>
+	    <h2 class='fragment'>Lenguaje de programación</h2>
+	  </section>
+
+	  <section>
+	    <h2>Marco de aplicaciones →</h2>
+	    <h3 class='fragment'>Django</h3>
+	    <h3 class='fragment'>Express</h3>
+	    <h3 class='fragment'>VertX</h3>
+	    <h3 class='fragment'>Java Play</h3>
+	  </section>
+
+	  <section>
+	    <h2>Lenguajes →</h2>
+	    <h3 class='fragment'>Node.js</h3>
+	    <h3 class='fragment'>Python</h3>
+	    <h3 class='fragment'>Perl</h3>
+	    <h3 class='fragment'>Scala</h3>
+	    <h3 class='fragment'>Go</h3>
+	  </section>
+
+	  <section>
+	    <h2>Pilas →</h2>
+	    <h3 class='fragment'>LAMP</h3>
+	    <h3 class='fragment'>MEAN</h3>
+	    <h3 class='fragment'>LYME/LYCE</h3>
+	    <h3 class='fragment'>ELK</h3>
+	  </section>
+
+	  <section><h1>Hay un mundo entero ahí fuera</h1></section>
+
+	  <section><h2>Y además</h2>
+	    <h2 class='fragment'>Mensajería: AMQS, RabbitMQ</h2>
+	    <h2 class='fragment'>ElasticSearch</h2>
+	    <h2 class='fragment'>Logs</h2>
+
+	    <aside class='notes'>Estos son los añadidos terriblemente
+	      útiles para cualquier aplicación moderna que se precie.</aside>
+	  </section>
+	    
+	</section>
+
+	<section><h1>Un PaaS te da</h1>
+	  <h2 class='fragment'>Niveles gratis</h2>
+	  <h2 class='fragment'>Despliegue automático desde
+	  CI/Repo</h2>
+	  <h2 class='fragment'>Escalado automático h/v</h2>
+	  <h2 class='fragment'>Equilibrado de carga</h2>
+	</section>
+
+	<section>
+	  <h2>PaaS útiles</h2>
+	  <h1 class='fragment'>OpenShift</h1>
+	  <h2  class='fragment'>Heroku</h2>
+	  <h3  class='fragment'>BlueMix, Nodejitsu, Nitrous.io,
+	  Google App Engine...</h3>
+	</section>
+	
+	<section>
+	  <section><h1>Usando OpenShift</h1>
+	    <h2>Alta → Descarga cliente → Subir clave ssh</h2>
+	  </section>
+
+	  <section>
+	    <h2><pre><code>rhc cartridge list</code></pre>
+	    </h2>
+	  </section>
+
+	  <section>
+	    <h2><pre><code>rhc app-create pispaas ruby-2.0</code></pre></h2>
+	      <img src='img/create.png' alt='create'>
+	  </section>
+
+
+	  <section>
+	    <h2><pre><code>cd pispaas</code></pre></h2>
+	    <h3>... <em>[cambia cosas]</em></h3>
+	    <h2><pre><code>git push</code></pre></h2>
+	  </section>
+
+	  <section>
+	    <img src='img/deploy.png' alt='desplegado'>
+	    
+	  </section>
+
+	  <section>
+	    <h2><pre><code>rhc cartridge-add 
+  phpmyadmin-4 mysql-5.5
+  --app pispaas</code></pre>
+
+	      <img src='img/phpmyadmin.png' title='myadmin'>
+	    </h2>
+	  </section>
+	</section>
+
+      </div> <!-- slides -->
+      
+    </div> <!-- reveal -->
+    
+<!-- conf stuff -->
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
