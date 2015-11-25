@@ -1,0 +1,3 @@
+[submodule "pispaas"]
+	path = public
+	url = git@github.com:JJ/pispaas.git
