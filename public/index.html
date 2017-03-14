@@ -44,8 +44,11 @@
 
 	<section><h1>Plataforma como servicio → <em>PaaS</em></h1></section>
 
-	<section><em>Plataforma</em> := <em>Stack</em> +
-	Añadidos.</section>
+	<section><h1>Pi como servicio → <em>πaaS</em></h1></section>
+
+	
+
+	<section><em>Plataforma</em> := <em>Stack</em> + Añadidos.</section>
 
 	<section><h1>Generalmente online</h1>
 	  <h2 class='fragment'>Pero también privados/software libre:
@@ -102,6 +105,12 @@
 	    
 	</section>
 
+	<section>
+	  <section><h1>Microservicios</h1>
+	  </section>
+	  <section><h1>Git</h1></section>
+	  <section><h1>Test/Integración continua</h1></section>
+
 	<section><h1>Un PaaS te da</h1>
 	  <h2 class='fragment'>Niveles gratis</h2>
 	  <h2 class='fragment'>Despliegue automático desde
@@ -112,47 +121,24 @@
 
 	<section>
 	  <h2>PaaS útiles</h2>
-	  <h1 class='fragment'>OpenShift</h1>
 	  <h2  class='fragment'>Heroku</h2>
-	  <h3  class='fragment'>BlueMix, Nodejitsu, Nitrous.io,
-	  Google App Engine...</h3>
+	  <h1 class='fragment'>Google AppEngine</h1>
+	  <h3  class='fragment'>Azure, BlueMix, Nodejitsu, Nitrous.io</h3>
 	</section>
 	
 	<section>
-	  <section><h1>Usando OpenShift</h1>
+	  <section><h1>Usando Heroku</h1>
 	    <h2>Alta → Descarga cliente → Subir clave ssh</h2>
 	  </section>
 
 	  <section>
-	    <h2><pre><code>rhc cartridge list</code></pre>
-	    </h2>
+	    <img src='img/deploy.png' alt='desplegado'>	    
 	  </section>
 
-	  <section>
-	    <h2><pre><code>rhc app-create pispaas ruby-2.0</code></pre></h2>
-	      <img src='img/create.png' alt='create'>
-	  </section>
+	</section>
 
-
-	  <section>
-	    <h2><pre><code>cd pispaas</code></pre></h2>
-	    <h3>... <em>[cambia cosas]</em></h3>
-	    <h2><pre><code>git push</code></pre></h2>
-	  </section>
-
-	  <section>
-	    <img src='img/deploy.png' alt='desplegado'>
-	    
-	  </section>
-
-	  <section>
-	    <h2><pre><code>rhc cartridge-add 
-  phpmyadmin-4 mysql-5.5
-  --app pispaas</code></pre>
-
-	      <img src='img/phpmyadmin.png' title='myadmin'>
-	    </h2>
-	  </section>
+	<section>
+	  <h1>Úsalo con mesura</h1>
 	</section>
 
       </div> <!-- slides -->
